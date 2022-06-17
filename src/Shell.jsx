@@ -37,7 +37,7 @@ const StarMatch = () => {
     const [secondsLeft, setSecondsLeft] = useState(10);
     // setInterval, setTimeout (In this app we are going to use setTimeout)
     useEffect(() => {
-        if(secondsLeft > 0){
+        if(secondsLeft > 0 && availableNums.length > 0){
             const timerId = setTimeout(() => {
                 setSecondsLeft(secondsLeft - 1)
             }, 1000)
@@ -71,7 +71,7 @@ const StarMatch = () => {
 
     const onNumberClick = (number, currentStatus) => {
         // currentStatus => newStatus
-        if(currentStatus == 'used'){
+        if(gameStatus!== 'active' || currentStatus == 'used'){
             return;
         }
         //CandidateNums
