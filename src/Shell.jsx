@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import { useState } from 'react';
 import './ShellCss.css';
 
 const StarMatch = () => {
-    const stars = 5;
+    const [stars, setStars] = useState(utils.random(1,9));
     return(
         <div className="game">
             <div className="help">
