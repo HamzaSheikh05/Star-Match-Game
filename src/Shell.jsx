@@ -32,7 +32,9 @@ const StarMatch = () => {
     const [secondsLeft, setSecondsLeft] = useState(10);
     // setInterval, setTimeout (In this app we are going to use setTimeout)
     useEffect(() => {
-        console.log("Rendered...")
+        setTimeout(() => {
+            setSecondsLeft(secondsLeft - 1)
+        }, 1000)
     })
 
     const candidatesAreWrong = utils.sum(candidateNums) > stars;
